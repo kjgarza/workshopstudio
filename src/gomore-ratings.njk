@@ -1,0 +1,19 @@
+---
+layout: layouts/project.njk
+bodyClass: gomore_ratings
+title: GoMore - Ratings
+description: GoMore ratings system redesign
+---
+
+{% for item in gomoreRatings.content.sections %}
+    {% if item.type == "image" %}
+        {% set image = item.image %}
+        {% include "components/project-image.njk" %}
+    {% elif item.type == "blockquote" %}
+        {% set blockquote = item.blockquote %}
+        {% include "components/project-blockquote.njk" %}
+    {% elif item.type == "text-section" %}
+        {% set section = item.section %}
+        {% include "components/project-text-section.njk" %}
+    {% endif %}
+{% endfor %}

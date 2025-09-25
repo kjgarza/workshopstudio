@@ -1,0 +1,12 @@
+<div class="project-category project-category--{{ cssClass }}">
+    <h2>{{ category.title }}</h2>
+    <ul>
+        {% for item in category.items %}
+        <li>
+            <a href="{{ item.url }}" id="{{ item.id }}">
+                {{ item.title }}<time>{{ item.time }}</time>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

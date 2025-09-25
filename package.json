@@ -1,0 +1,19 @@
+{
+  "name": "the-workshop-studio-berlin",
+  "version": "1.0.0",
+  "description": "The Workshop Studio Berlin",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "watch": "eleventy --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-ghpages": "npx @11ty/eleventy"
+  },
+  "keywords": ["eleventy", "portfolio", "design", "static-site"],
+  "author": "Kristian Garza",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

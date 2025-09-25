@@ -1,0 +1,5 @@
+<!-- DEBUG: section = {{ section | dump }} -->
+<div class="main-grid">
+    {% if section and section.heading %}<h3 class="{{ section.heading.class }}">{{ section.heading.text }}</h3>{% endif %}
+    {% if section and section.content %}<p>{{ section.content | safe }}</p>{% endif %}
+</div>

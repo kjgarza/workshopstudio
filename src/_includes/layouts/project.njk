@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="project-wrapper">
+    {% include "components/project-header.njk" %}
+    
+    <section>
+        {{ content | safe }}
+    </section>
+</div>
+
+{% include "components/project-footer.njk" %}

@@ -1,0 +1,10 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% if bodyClass == "home" %}
+<script type="text/javascript">
+    $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+            $('.home-wrapper').addClass('show-time');
+        }
+    });
+</script>
+{% endif %}

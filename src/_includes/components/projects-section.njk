@@ -1,0 +1,8 @@
+<section id="projects">
+    {% for categoryKey, category in portfolio.projects %}
+        {% set cssClass = category.cssClass %}
+        {% include "components/project-category.njk" %}
+    {% endfor %}
+    
+    {% include "components/author-name.njk" %}
+</section>

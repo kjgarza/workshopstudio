@@ -1,0 +1,29 @@
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleAnalytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.googleAnalytics }}');
+  </script>
+  <meta charset="utf-8">
+
+  <title>{{ title or site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  <meta property="og:image" content="/img/website.jpg" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/interface/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/interface/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/interface/favicon-16x16.png">
+  <link rel="manifest" href="/img/interface/site.webmanifest">
+  <link rel="mask-icon" href="/img/interface/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="{{ site.meta.tileColor }}">
+  <meta name="theme-color" content="{{ site.meta.themeColor }}">
+
+  <link rel="stylesheet" href="/css/master.css">
+</head>

@@ -1,0 +1,9 @@
+<div class="main-grid">
+    <blockquote class="{{ blockquote.class }}">
+        <span>{{ blockquote.quote.startQuote }}</span>{{ blockquote.quote.text }}<cite class="{{ blockquote.cite.class }}">{{ blockquote.cite.text | safe }}</cite>
+    </blockquote>
+    <p>
+        {{ blockquote.followupText | safe }}
+        {% if blockquote.footnote %}<small>{{ blockquote.footnote | safe }}</small>{% endif %}
+    </p>
+</div>

@@ -1,0 +1,36 @@
+{% for item in sections %}
+    {% if item.type == "figure" %}
+        <figure>
+            {% if item.images %}
+                {% if item.images | length > 1 %}
+                    <span class="{{ item.containerClass }}">
+                        {% for img in item.images %}
+                            <img src="{{ img.src }}" alt="{{ img.alt }}">
+                        {% endfor %}
+                    </span>
+                {% else %}
+                    <img class="{{ item.images[0].classes }}" src="{{ item.images[0].src }}" alt="{{ item.images[0].alt }}">
+                {% endif %}
+            {% endif %}
+            {% if item.caption %}
+                <figcaption class="{{ item.caption.class }}"><span>{{ item.caption.text }}</span></figcaption>
+            {% endif %}
+        </figure>
+    {% elif item.type == "text-block" %}
+        <div class="main-grid">
+            {% if item.heading %}
+                <h3 class="{{ item.heading.class }}">{{ item.heading.text }}</h3>
+            {% endif %}
+            <p>{{ item.content | safe }}</p>
+        </div>
+    {% elif item.type == "blockquote-section" %}
+        <div class="main-grid">
+            <blockquote class="{{ item.blockquote.class }}">
+                <span>{{ item.blockquote.startQuote }}</span>{{ item.blockquote.text }}<cite class="{{ item.cite.class }}">{{ item.cite.text }}</cite>
+            </blockquote>
+            <p>{{ item.followupText | safe }}
+                {% if item.footnote %}<small>{{ item.footnote | safe }}</small>{% endif %}
+            </p>
+        </div>
+    {% endif %}
+{% endfor %}

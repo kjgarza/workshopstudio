@@ -1,0 +1,5 @@
+<div class="contact">
+    {% for contact in author.contact %}
+    <a href="{{ contact.url }}"{% if contact.external %} target="_blank"{% endif %}>{{ contact.label }}</a>
+    {% endfor %}
+</div>

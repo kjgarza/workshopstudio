@@ -1,0 +1,9 @@
+<ul class="job-timeline">
+    {% for job in author.jobTimeline %}
+    <li>
+        <time>{{ job.period }}</time>
+        <span>{{ job.company }}</span>
+        <span>{{ job.role }}</span>
+    </li>
+    {% endfor %}
+</ul>

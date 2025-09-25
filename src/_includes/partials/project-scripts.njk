@@ -1,0 +1,43 @@
+<script>
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+        $('.back-home').addClass('show-time');
+   }
+});
+
+// DVD screensaver marquee effect
+(function ($, window, undefined) {
+    $.fn.marqueeify = function (options) {
+        var settings = $.extend({
+            speed: 50,
+            pause_on_hover: false,
+            pause_on_cycle: false,
+            direction: 'left'
+        }, options);
+
+        return this.each(function() {
+            var $marquee = $(this);
+            var container_width = $marquee.parent().width();
+            var text_width = $marquee.width();
+            var direction = settings.direction;
+            var speed = settings.speed;
+            
+            if (text_width > container_width) {
+                $marquee.animate({ 'margin-left': direction == 'left' ? -text_width : container_width },
+                    ((direction == 'left' ? text_width : container_width) + container_width) * (60 / speed),
+                    'linear',
+                    function() {
+                        $marquee.css('margin-left', direction == 'left' ? container_width : -text_width);
+                        $marquee.marqueeify(settings);
+                    }
+                );
+            }
+        });
+    };
+})(jQuery, window);
+
+$(document).ready( function() {
+    $('.marquee').marqueeify({
+    });
+});
+</script>

@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en">
+{% include "partials/head.njk" %}
+<body class="{{ bodyClass or 'page' }}">
+  {{ content | safe }}
+  {% include "partials/scripts.njk" %}
+  {% if bodyClass and bodyClass.startsWith('gomore') or bodyClass.startsWith('project') %}
+    {% include "partials/project-scripts.njk" %}
+  {% endif %}
+</body>
+</html>
