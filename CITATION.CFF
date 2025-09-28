@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Garza
+    given-names: Kristian
+    email: kj.garza@gmail.com
+    orcid: https://orcid.org/0000-0003-3484-6875
+    affiliation: 
+title: "The Workshop Studio"
+version: 1.0.0
+doi: https://doi.org/
+license: CC-BY-NC-ND-4.0
+url: https://github.com/kjgarza/workshop_studio
+date-released: 28-09-2025
+keywords: 
+  - Workshops
+  - Design
+  - Art
