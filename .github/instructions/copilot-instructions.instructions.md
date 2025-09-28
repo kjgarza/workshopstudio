@@ -2,24 +2,29 @@
 
 ## Architecture Overview
 
-This is a **dual-architecture hybrid portfolio site** combining:
-- **11ty static site generator** (`kjgarza-11ty/`) - the source and build system
-- **Pre-compiled Next.js assets** (`_next/` directories) - providing CSS and interactive components
-- **Deployed to GitHub Pages** at `https://kjgarza.github.io/`
+This is a **pure 11ty static site generator** project:
+- **11ty static site generator** - the source and build system
+- **Custom CSS and JavaScript** - located in `src/assets/`
+- **Deployed to GitHub Pages** at `https://kjgarza.github.io/workshopstudio`
 
-The site uses Nunjucks templates with Tailwind CSS classes, generating static HTML while leveraging Next.js assets for styling and interactions.
+The site uses Nunjucks templates with custom CSS, generating static HTML for a workshop studio portfolio.
 
 ## Key Directory Structure
 
 ```
-├── kjgarza-11ty/          # 11ty source (working directory)
+├── workshopstudio/          # 11ty source (working directory)
 │   ├── src/
-│   │   ├── _data/                 # Global data files (work.js, tools.js, site.js)
+│   │   ├── _data/                 # Global data files (site.js, portfolio.js, author.js)
 │   │   ├── _includes/
-│   │   │   ├── layouts/           # Base templates (base.njk, case-study.njk)
-│   │   │   └── components/        # Reusable UI components
-│   │   ├── work/                  # Case study pages (.njk files)
-│   │   └── _next/                 # Pre-compiled Next.js CSS/JS assets
+│   │   │   ├── layouts/           # Base templates (base.njk, home.njk, project.njk, presentation.njk)
+│   │   │   ├── components/        # Reusable UI components
+│   │   │   └── partials/          # Partial templates (head.njk, scripts.njk)
+│   │   ├── assets/                # Static assets (CSS, JS, images, fonts)
+│   │   │   ├── css/               # Custom CSS files
+│   │   │   ├── js/                # JavaScript files
+│   │   │   ├── img/               # Images and icons
+│   │   │   └── fonts/             # Web fonts
+│   │   └── *.njk                  # Page templates (index.njk, presentations)
 │   ├── _site/                     # 11ty build output
 │   └── .eleventy.js               # 11ty configuration
 ```
@@ -38,32 +43,40 @@ The site uses Nunjucks templates with Tailwind CSS classes, generating static HT
 3. **Site metadata**: Edit `src/_data/site.js` for global site information
 
 ### Template Hierarchy
-- `layouts/base.njk` → provides HTML structure, SEO meta tags, navigation
-- `layouts/case-study.njk` → extends base.njk, adds case study-specific layout with password protection
-- Individual pages use these layouts via frontmatter `layout: layouts/case-study.njk`
+- `layouts/base.njk` → provides HTML structure, SEO meta tags, scripts
+- `layouts/home.njk` → extends base.njk for homepage with project sections
+- `layouts/project.njk` → extends base.njk for individual project pages
+- `layouts/presentation.njk` → extends base.njk for Reveal.js presentation slides
+- Individual pages use these layouts via frontmatter `layout: layouts/home.njk`
 
 ## Critical Configuration Details
 
 ### 11ty Configuration (.eleventy.js)
 ```javascript
-// Disables HTML auto-escaping for inline SVGs and complex UI
+// Copy static assets with proper path mapping
+eleventyConfig.addPassthroughCopy({"src/assets/css": "css"});
+eleventyConfig.addPassthroughCopy({"src/assets/js": "js"});
+eleventyConfig.addPassthroughCopy({"src/assets/images": "img"});
+eleventyConfig.addPassthroughCopy({"src/assets/img": "img"});
+eleventyConfig.addPassthroughCopy({"src/assets/fonts": "fonts"});
+
+// Disables HTML auto-escaping for inline SVGs
 eleventyConfig.setNunjucksEnvironmentOptions({
   autoescape: false,
 });
-
-// Copies Next.js assets for hybrid architecture
-eleventyConfig.addPassthroughCopy("src/_next");
 ```
 
 ### Data Architecture
-- **Work items** in `src/_data/work.js` use status field: `"published"` (shows case study link) vs `"coming-soon"` (shows placeholder)
-- **Grid system** uses `gridClass` property for CSS Grid layout: `"col-span-2 row-span-1"`, `"col-span-1 row-span-2"`
-- **Featured content** filtered via `workItem.featured` boolean
+- **Portfolio projects** in `src/_data/portfolio.js` organized by categories (braze, hellofresh, gameduell)
+- **Site metadata** in `src/_data/site.js` includes navigation, SEO settings, and analytics
+- **Author information** in `src/_data/author.js` contains bio, job timeline, and contact details
+- **Project data** includes specialized data files like `gomoreRatings.js` for detailed case studies
 
 ### Styling System
-- **Tailwind CSS** via pre-compiled Next.js stylesheet: `/_next/static/css/b79f6ce842955dc5.css`
-- **Custom design tokens**: `text-primary`, `text-secondary`, `text-accent`, `bg-surface`, `border-card`
-- **Component styles**: Complex button classes with hover states, shadow utilities
+- **Custom CSS** in `src/assets/css/master.css` with custom design system
+- **Custom design tokens**: CSS custom properties for colors, typography, and spacing
+- **Component-based styles**: Modular CSS for project cards, navigation, and layout components
+- **Responsive design**: Mobile-first approach with custom breakpoints
 
 ## Navigation and State Management
 
@@ -82,39 +95,50 @@ Used for client case studies requiring access control.
 
 ## Image and Asset Handling
 
-### External Image CDN
-- Work images hosted on **cosmicjs.com CDN**
-- Hero images use query parameters: `?rect=0,-136,5120,3471` for cropping
-- Responsive sizing handled via CDN width parameters: `&w=1920&q=100`
-
 ### Static Assets
-- Drawings/icons in `src/drawings/` (SVG files for UI decoration)
-- Favicon and assets copied via `addPassthroughCopy()`
+- **Images** stored in `src/assets/img/` with organized subdirectories
+- **Interface assets** in `src/assets/img/interface/` (favicons, backgrounds)
+- **Project images** in categorized folders (gomore, logflumes, mckatsu, etc.)
+- **Fonts** in `src/assets/fonts/` (Lausanne typeface)
+- **JavaScript** in `src/assets/js/` for interactive components
+- All assets copied via `addPassthroughCopy()` configuration
 
 ## Content Patterns
 
-### Case Study Structure
+### Project Page Structure
 ```njk
 ---
-layout: layouts/case-study.njk
-title: [Title]
+layout: layouts/project.njk
+bodyClass: project_name
+title: [Project Title]
 description: [Meta description]
-company: [Company name]
-tags: [Array of tags]
-heroImage: [CDN URL]
-permalink: [URL path]
-passwordProtected: [boolean]
 ---
 
-## Overview
-[Markdown content]
+[Project content using components]
 ```
 
-### Work Card Grid System
-Cards use dynamic grid classes and responsive image containers:
+### Presentation Structure
+```njk
+---
+layout: layouts/presentation.njk
+title: [Presentation Title]
+theme: "black"
+permalink: "/presentation-name/"
+---
+
+[Reveal.js slides content]
+```
+
+### Portfolio Grid System
+Portfolio items organized in categories with custom CSS classes:
 ```javascript
-gridClass: "col-span-2 row-span-1",  // CSS Grid positioning
-imageContainer: "bg-retro-100 ml-6 w-full rounded-tl-2xl px-6 pt-6"  // Custom styling
+cssClass: "gomore",  // CSS class for styling
+items: [{
+  id: "unique-id",
+  title: "Project Title",
+  time: "Timeline",
+  url: "/project-url"
+}]
 ```
 
 ## SEO and Meta Management
@@ -130,4 +154,3 @@ This hybrid architecture requires:
 2. Copying `_site/` contents to repository root
 3. Ensuring `_next/` assets are properly copied and accessible
 
-The pre-compiled Next.js assets must remain in the `src/_next/` directory and be copied to both `_site/_next/` and root `_next/` for deployment.
