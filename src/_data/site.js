@@ -33,6 +33,11 @@ module.exports = {
       name: "Berlin Workshop",
       href: "/berlin-workshop/",
       current: false
+    },
+    {
+      name: "Goal-Setting Workshop",
+      href: "/end-of-year-workshop/",
+      current: false
     }
   ]
 };
