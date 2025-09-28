@@ -1,30 +1,27 @@
 # Copilot Instructions for Kristian Garza Portfolio
 
+# Copilot Instructions for The Workshop Studio
+
 ## Architecture Overview
 
-This is a **pure 11ty static site generator** project:
+This is an **11ty static site generator** project:
 - **11ty static site generator** - the source and build system
-- **Custom CSS and JavaScript** - located in `src/assets/`
+- **Standard CSS and JavaScript assets** - providing styling and interactive components
 - **Deployed to GitHub Pages** at `https://kjgarza.github.io/workshopstudio`
 
-The site uses Nunjucks templates with custom CSS, generating static HTML for a workshop studio portfolio.
+The site uses Nunjucks templates with custom CSS, generating static HTML for a workshop facilitation business.
 
 ## Key Directory Structure
 
 ```
 ├── workshopstudio/          # 11ty source (working directory)
 │   ├── src/
-│   │   ├── _data/                 # Global data files (site.js, portfolio.js, author.js)
+│   │   ├── _data/                 # Global data files (portfolio.js, author.js, site.js)
 │   │   ├── _includes/
 │   │   │   ├── layouts/           # Base templates (base.njk, home.njk, project.njk, presentation.njk)
-│   │   │   ├── components/        # Reusable UI components
-│   │   │   └── partials/          # Partial templates (head.njk, scripts.njk)
+│   │   │   └── components/        # Reusable UI components
 │   │   ├── assets/                # Static assets (CSS, JS, images, fonts)
-│   │   │   ├── css/               # Custom CSS files
-│   │   │   ├── js/                # JavaScript files
-│   │   │   ├── img/               # Images and icons
-│   │   │   └── fonts/             # Web fonts
-│   │   └── *.njk                  # Page templates (index.njk, presentations)
+│   │   └── *.njk                  # Page templates
 │   ├── _site/                     # 11ty build output
 │   └── .eleventy.js               # 11ty configuration
 ```
