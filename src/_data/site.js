@@ -3,7 +3,7 @@ module.exports = {
   description: "The Workshop Studio — Berlin",
   author: "The Workshop Studio",
   baseURL: process.env.ELEVENTY_ENV === 'production' ? 'https://workshop-studio.com' : 'http://localhost:8080',
-  googleAnalytics: "UA-142771867-1",
+  googleAnalytics: "G-X7KFRJYWBL",
   meta: {
     themeColor: "#FF8760",
     tileColor: "#FF8760"
@@ -27,6 +27,11 @@ module.exports = {
     {
       name: "Publications",
       href: "/publications",
+      current: false
+    },
+    {
+      name: "Berlin Workshop",
+      href: "/berlin-workshop/",
       current: false
     }
   ]

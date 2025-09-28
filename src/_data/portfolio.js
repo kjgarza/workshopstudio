@@ -1,88 +1,88 @@
 module.exports = {
   projects: {
     braze: {
-      title: "Braze – \"Absolutely Engaging\"",
+      title: 'Services – "Workshopping for everyone"',
       cssClass: "gomore",
       items: [
         {
           id: "ratings",
-          title: "Hugo Boss",
-          time: "'24-now",
-          url: "gomore_ratings.html"
+          title: "Strategy Workshops",
+          time: "Design",
+          url: "/",
         },
         {
-          id: "product-design", 
-          title: "Zalando",
-          time: "'23-now",
-          url: "gomore_product-design.html"
+          id: "product-design",
+          title: "Design Sprints",
+          time: "Facilitation",
+          url: "/",
         },
         {
           id: "brand-design",
-          title: "MyTeresa", 
-          time: "'22-'23",
-          url: "gomore_brand-design.html"
-        }
-      ]
+          title: "Team building",
+          time: "Workshops",
+          url: "/",
+        },
+      ],
     },
     hellofresh: {
-      title: "HelloFresh – \"America's #1 meal kit\"",
+      title: 'Outcomes – "What do you get"',
       cssClass: "the-guardian",
       items: [
         {
           id: "header",
-          title: "Multichannel campaigns",
-          time: "'22",
-          url: "header.html"
+          title: "Alignment",
+          time: "♡︎",
+          url: "/",
         },
         {
           id: "editorial",
-          title: "New product",
-          time: "'21", 
-          url: "editorial-design.html"
+          title: "Better decisions",
+          time: "( ◡‿◡ *)",
+          url: "/",
         },
         {
           id: "design-system",
-          title: "CRM strategy",
+          title: "Faster Ideation",
           time: "x1000",
-          url: "design-system.html"
-        }
-      ]
+          url: "/",
+        },
+      ],
     },
     gameduell: {
-      title: "GameDuell – \"Bringing people together to have a good time with games.\"",
+      title: 'Tools  – "Toys we will employ"',
       cssClass: "personal-projects",
       items: [
         {
           id: "good-mourning",
           title: "Miro",
           time: "boards",
-          url: ""
+          url: "/",
         },
         {
           id: "log-flumes",
-          title: "Belote",
-          time: "'18-'21",
-          url: "log-flumes.html"
+          title: "Dovetail",
+          time: "collections",
+          url: "/",
         },
         {
           id: "mckatsu",
           title: "Sticky notes",
           time: "pads",
-          url: "mckatsu.html"
+          url: "/",
         },
         {
           id: "pigeon",
-          title: "NotebookLM", 
+          title: "NotebookLM",
           time: "AI",
-          url: "pigeon.html"
+          url: "/",
         },
         {
           id: "zeefax",
           title: "Figma",
           time: "projects",
-          url: "zeefax.html"
-        }
-      ]
-    }
-  }
+          url: "/",
+        },
+      ],
+    },
+  },
 };

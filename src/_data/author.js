@@ -1,48 +1,48 @@
 module.exports = {
   name: {
-    forename: "Claudia",
+    forename: "The",
     surname: {
-      first: "Garcia",
-      second: "Varela"
-    }
+      first: "Workshop",
+      second: "Studio",
+    },
   },
-  bio: "I manage relationships with high-value clients and act as the bridge between them and our internal Marketing, Product, and IT teams.",
+  bio: "A expert group of facilitators with around a decade of experience using the latest methods and tools currently working in Tech.",
   jobTimeline: [
     {
-      period: "'22-Now",
+      period: "'24-Now",
       company: "Braze",
-      role: "Senior Customer Success Manager"
+      role: "Strategic Workshop",
     },
     {
-      period: "'21-'22", 
-      company: "Hello Fresh",
-      role: "CRM Audience Manager"
+      period: "'23-June",
+      company: "Zalando",
+      role: "CRM Workshop",
     },
     {
-      period: "'18-'21",
-      company: "GameDuell", 
-      role: "CRM Manager"
+      period: "'21-Feb",
+      company: "Make Data Count",
+      role: "Lighting Workshops",
     },
     {
-      period: "'17-'18",
-      company: "Lesara",
-      role: "CRM Manager"
-    }
+      period: "'20-June",
+      company: "DataCite",
+      role: "Design Sprint",
+    },
   ],
   contact: [
     {
       label: "Email",
-      url: "mailto: hello@zefs.website"
+      url: "mailto: kj.garza+theworkshopstudio@gmail.com",
     },
     {
-      label: "LinkedIn", 
-      url: "https://www.linkedin.com/in/chrisdeburgh/",
-      external: true
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/kjgarza/",
+      external: true,
     },
     {
       label: "Twitter",
-      url: "https://twitter.com/ZefTillDeath",
-      external: true
-    }
-  ]
+      url: "https://twitter.com/kriztean",
+      external: true,
+    },
+  ],
 };
