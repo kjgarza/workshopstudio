@@ -24,7 +24,7 @@ module.exports = function(eleventyConfig) {
       data: "_data",
       output: "_site"
     },
-    pathPrefix: process.env.ELEVENTY_ENV === 'production' ? '/workshopstudio' : '',
+    pathPrefix: process.env.ELEVENTY_ENV === 'production' ? '/' : '',
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     templateFormats: ["md", "njk", "html", "liquid"]
