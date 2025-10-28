@@ -59,12 +59,6 @@ module.exports = {
           url: "/",
         },
         {
-          id: "log-flumes",
-          title: "Dovetail",
-          time: "collections",
-          url: "/",
-        },
-        {
           id: "mckatsu",
           title: "Sticky notes",
           time: "pads",
