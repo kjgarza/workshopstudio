@@ -2,8 +2,8 @@ module.exports = {
   title: "The Workshop Studio",
   description: "The Workshop Studio — Berlin",
   author: "The Workshop Studio",
-  baseURL: process.env.ELEVENTY_ENV === 'production' ? 'https://kjgarza.github.io/workshopstudio' : 'http://localhost:8080',
-  pathPrefix: process.env.ELEVENTY_ENV === 'production' ? '/workshopstudio' : '',
+  baseURL: process.env.ELEVENTY_ENV === 'production' ? 'https://theworkshop-studio.xyz' : 'http://localhost:8080',
+  pathPrefix: '',
   googleAnalytics: "G-X7KFRJYWBL",
   meta: {
     themeColor: "#FF8760",

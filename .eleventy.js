@@ -5,6 +5,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"src/assets/images": "img"});
   eleventyConfig.addPassthroughCopy({"src/assets/img": "img"});
   eleventyConfig.addPassthroughCopy({"src/assets/fonts": "fonts"});
+  
+  // Copy CNAME file for custom domain support
+  eleventyConfig.addPassthroughCopy("src/CNAME");
 
   // Watch for changes in assets
   eleventyConfig.addWatchTarget("src/assets/");
@@ -24,7 +27,7 @@ module.exports = function(eleventyConfig) {
       data: "_data",
       output: "_site"
     },
-    pathPrefix: process.env.ELEVENTY_ENV === 'production' ? '/' : '',
+    pathPrefix: '/',
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     templateFormats: ["md", "njk", "html", "liquid"]
