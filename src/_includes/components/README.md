@@ -16,12 +16,13 @@ Displays project categories with links to individual projects. Shows:
 
 ## 2. `projects-section-alt.njk` (Alternative)
 
-Displays two introductory paragraphs with the same styling as the about-bio section. This is ideal for a more content-focused, narrative introduction to your workshop services.
+Displays two sections with h2 titles and paragraph text, using the same layout structure as project categories. This is ideal for a more content-focused, narrative introduction to your workshop services.
 
 **Features:**
-- Uses the same `about-bio` CSS class for consistent styling
-- Displays two customizable paragraphs
-- Responsive typography (6.6vw on mobile, 2.4vw on desktop)
+- Uses `project-category` wrapper for consistent left-aligned layout
+- Each section has an h2 title (styled like project category titles)
+- Each section has a paragraph with `about-bio` styling
+- Responsive typography (h2: 4vw mobile, 1.4vw desktop; p: 6.6vw mobile, 2.4vw on desktop)
 - Content is managed through `src/_data/site.js`
 
 **Usage:**
@@ -35,7 +36,9 @@ Edit the content in `src/_data/site.js`:
 
 ```javascript
 workshopIntro: {
+  title1: "Your first title",
   paragraph1: "Your first paragraph text here...",
+  title2: "Your second title",
   paragraph2: "Your second paragraph text here..."
 }
 ```
@@ -60,6 +63,7 @@ To use the alternative version on your homepage:
 ## Styling
 
 Both components inherit styles from the existing CSS:
-- `.about-bio` class provides the typography and layout
+- `.project-category` class provides the left-aligned layout and grid positioning
+- `.project-category h2` styles the section titles
+- `.about-bio` class provides the paragraph typography and layout
 - Animations and responsive behavior are handled automatically
-- Grid positioning works the same as the about section

@@ -10,7 +10,9 @@ module.exports = {
     tileColor: "#FF8760"
   },
   workshopIntro: {
+    title1: "Who We Are",
     paragraph1: "We're two professionals who've spent over ten years in the tech world, working with agile methods to help teams grow and adapt. Somewhere along the way, we realized: these same tools can be just as powerful for personal development.",
+    title2: "What We Offer",
     paragraph2: "Whether you're navigating a major life transition, setting meaningful goals, or just trying to figure out what comes next, our workshops give you a space to pause, reflect, and build a plan that actually feels right for you."
   },
   navigation: [

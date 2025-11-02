@@ -1,6 +1,13 @@
 <section id="projects">
-    <p class="about-bio">{{ site.workshopIntro.paragraph1 }}</p>
-    <p class="about-bio">{{ site.workshopIntro.paragraph2 }}</p>
+    <div class="project-category project-category--intro-1">
+        <h2>{{ site.workshopIntro.title1 }}</h2>
+        <p class="about-bio">{{ site.workshopIntro.paragraph1 }}</p>
+    </div>
+    
+    <div class="project-category project-category--intro-2">
+        <h2>{{ site.workshopIntro.title2 }}</h2>
+        <p class="about-bio">{{ site.workshopIntro.paragraph2 }}</p>
+    </div>
     
     {% include "components/author-name.njk" %}
 </section>
