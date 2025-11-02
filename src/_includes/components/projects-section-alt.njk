@@ -1,13 +1,10 @@
 <section id="projects">
-    <div class="project-category project-category--intro-1">
-        <h2>{{ site.workshopIntro.title1 }}</h2>
-        <p class="about-bio">{{ site.workshopIntro.paragraph1 }}</p>
+    {% for section in site.workshopIntro %}
+    <div class="project-category project-category--intro-{{ loop.index }}">
+        <h2>{{ section.title }}</h2>
+        <p class="about-bio">{{ section.text }}</p>
     </div>
-    
-    <div class="project-category project-category--intro-2">
-        <h2>{{ site.workshopIntro.title2 }}</h2>
-        <p class="about-bio">{{ site.workshopIntro.paragraph2 }}</p>
-    </div>
+    {% endfor %}
     
     {% include "components/author-name.njk" %}
 </section>

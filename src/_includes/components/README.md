@@ -16,14 +16,15 @@ Displays project categories with links to individual projects. Shows:
 
 ## 2. `projects-section-alt.njk` (Alternative)
 
-Displays two sections with h2 titles and paragraph text, using the same layout structure as project categories. This is ideal for a more content-focused, narrative introduction to your workshop services.
+Displays sections with h2 titles and paragraph text using a list-based data structure. The layout iterates through the list, making it easy to add or remove sections. This is ideal for a more content-focused, narrative introduction to your workshop services.
 
 **Features:**
+- Uses a list/array structure for flexible content management
+- Iterates through sections automatically
+- Each section has an h2 title and paragraph with `about-bio` styling
 - Uses `project-category` wrapper for consistent left-aligned layout
-- Each section has an h2 title (styled like project category titles)
-- Each section has a paragraph with `about-bio` styling
 - Responsive typography (h2: 4vw mobile, 1.4vw desktop; p: 6.6vw mobile, 2.4vw on desktop)
-- Content is managed through `src/_data/site.js`
+- Easy to add more sections by adding to the array
 
 **Usage:**
 ```njk
@@ -35,12 +36,17 @@ Displays two sections with h2 titles and paragraph text, using the same layout s
 Edit the content in `src/_data/site.js`:
 
 ```javascript
-workshopIntro: {
-  title1: "Your first title",
-  paragraph1: "Your first paragraph text here...",
-  title2: "Your second title",
-  paragraph2: "Your second paragraph text here..."
-}
+workshopIntro: [
+  {
+    title: "Your first title",
+    text: "Your first paragraph text here..."
+  },
+  {
+    title: "Your second title",
+    text: "Your second paragraph text here..."
+  }
+  // Add more sections as needed
+]
 ```
 
 ## Switching Between Components
