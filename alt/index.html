@@ -34,14 +34,55 @@
 <div class="home-wrapper">
     <div class="sections-wrapper">
         
-<section id="projects">
+<style>
+/* Workshop Intro Sections - No animations, stacked vertically */
+.workshop-intro-sections {
+    display: block;
+}
+
+.workshop-intro-section {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+    margin-bottom: 60px;
+    padding-left: 14.3vw;
+}
+
+@media (min-width: 810px) {
+    .workshop-intro-section {
+        padding-left: 0;
+        margin-bottom: 60px;
+    }
+}
+
+.workshop-intro-section h2 {
+    font-size: 4vw;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+@media (min-width: 810px) {
+    .workshop-intro-section h2 {
+        font-size: 1.4vw;
+    }
+}
+
+.workshop-intro-section .about-bio {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+    margin-bottom: 0;
+}
+</style>
+
+<section id="projects" class="workshop-intro-sections">
     
-    <div class="project-category project-category--intro-1">
+    <div class="workshop-intro-section">
         <h2>Who We Are</h2>
         <p class="about-bio">We're two professionals who've spent over ten years in the tech world, working with agile methods to help teams grow and adapt. Somewhere along the way, we realized: these same tools can be just as powerful for personal development.</p>
     </div>
     
-    <div class="project-category project-category--intro-2">
+    <div class="workshop-intro-section">
         <h2>What We Offer</h2>
         <p class="about-bio">Whether you're navigating a major life transition, setting meaningful goals, or just trying to figure out what comes next, our workshops give you a space to pause, reflect, and build a plan that actually feels right for you.</p>
     </div>
