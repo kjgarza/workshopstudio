@@ -1,6 +1,47 @@
-<section id="projects">
+<style>
+/* Workshop Intro Sections - No animations, stacked vertically */
+.workshop-intro-sections {
+    display: block;
+}
+
+.workshop-intro-section {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+    margin-bottom: 60px;
+    padding-left: 14.3vw;
+}
+
+@media (min-width: 810px) {
+    .workshop-intro-section {
+        padding-left: 0;
+        margin-bottom: 60px;
+    }
+}
+
+.workshop-intro-section h2 {
+    font-size: 4vw;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+@media (min-width: 810px) {
+    .workshop-intro-section h2 {
+        font-size: 1.4vw;
+    }
+}
+
+.workshop-intro-section .about-bio {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+    margin-bottom: 0;
+}
+</style>
+
+<section id="projects" class="workshop-intro-sections">
     {% for section in site.workshopIntro %}
-    <div class="project-category project-category--intro-{{ loop.index }}">
+    <div class="workshop-intro-section">
         <h2>{{ section.title }}</h2>
         <p class="about-bio">{{ section.text }}</p>
     </div>

@@ -16,15 +16,18 @@ Displays project categories with links to individual projects. Shows:
 
 ## 2. `projects-section-alt.njk` (Alternative)
 
-Displays sections with h2 titles and paragraph text using a list-based data structure. The layout iterates through the list, making it easy to add or remove sections. This is ideal for a more content-focused, narrative introduction to your workshop services.
+Displays sections with h2 titles and paragraph text using a list-based data structure. Sections are stacked vertically **without animations** for a cleaner, more straightforward presentation. This is ideal for a more content-focused, narrative introduction to your workshop services.
 
 **Features:**
 - Uses a list/array structure for flexible content management
-- Iterates through sections automatically
-- Each section has an h2 title and paragraph with `about-bio` styling
-- Uses `project-category` wrapper for consistent left-aligned layout
+- Iterates through sections automatically with a for loop
+- Each section has an h2 title and paragraph with `about-bio` typography
+- **No animations** - sections appear immediately without fade-in effects
+- Stacked vertically one on top of the other
+- Left-aligned with responsive padding
 - Responsive typography (h2: 4vw mobile, 1.4vw desktop; p: 6.6vw mobile, 2.4vw on desktop)
 - Easy to add more sections by adding to the array
+- Includes inline CSS to override default animations
 
 **Usage:**
 ```njk
